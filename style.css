@@ -1,0 +1,274 @@
+*:not(p){ 
+    margin: 0;
+}
+html {
+	background-color: sandybrown;
+	height: 100%;
+}
+body {
+	width: 1024px;
+	max-height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	background-color: darkgrey;
+}
+
+.body_grid {
+	width: 1fr;
+	max-height: 100%;
+	display: flex;
+	align-content: space-between;
+	flex-wrap: wrap;
+}
+
+header *{
+	padding: 0;
+}
+/* #region header*/
+.header {
+	height: 50px;
+	flex: 0 0 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	background-color: rgb(43, 35, 25);
+	border-bottom: 10px groove black;
+}
+.header h1 {
+	flex: 0 0 250px;
+    line-height: 50px;
+}
+.header h1 a {
+	text-decoration: underline;
+	color: cadetblue;
+	padding-left: 5px;
+}
+.header nav {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+  	justify-content: stretch;
+}
+.header nav ul {
+	width: 100%;
+	list-style: none;
+	background-color: cadetblue;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+  	align-items: center;
+	justify-content: stretch;
+}
+nav li {
+	width: 100%;
+	padding: 5px;
+}
+nav li a {
+	display: block;
+	width: 100%;
+    line-height: 40px;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+nav a:hover {
+	background-color: burlywood;
+}
+nav > a {
+	display: block;
+	
+    line-height: 40px;
+	margin: 5px;
+	margin-right: 0;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+}
+a#login {
+	flex: 0 0 100px;
+}
+a#return {
+	flex: 0 0 200px;
+}
+nav > a:hover {
+	background-color: cadetblue;
+	color: black;
+}
+/* #endregion */
+
+/* #region content*/
+.content {
+	height: 1fr;
+	max-height: calc(100vh - 100px);
+	width: calc(100% - 270px);
+	margin-left: 10px;
+	margin-right: 10px;
+	border-top: 5px inset black;
+	border-bottom: 5px inset black;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	display: grid;
+	grid-template: min-content / auto auto;
+}
+.content_header {
+	width: 1fr;
+	min-height: 60px;
+	padding-top: 10px;
+	padding-left: 30px;
+	grid-area: 1 / 1 / span 1 / span 2;
+}
+.content article {
+	border: 5px inset #000;
+	margin-top: 20px;
+	margin: 10px;
+	padding: 5px;
+}
+.content article:nth-of-type(1) p:nth-of-type(2) {
+	font-weight: bold;
+	color: blue;
+}
+.content article img {
+	width: 50%;
+}
+.content_header #login_header {
+	text-transform: uppercase;
+}
+.content #login {
+	border: 5px solid #000;
+	border-radius: 10px;
+	padding: 5px;
+}
+.content #login button {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.content #login button[type=reset] {
+	color: red;
+}
+.content #login button[type=submit] {
+	color: green;
+}
+/* #endregion content*/
+
+.aside {
+	height: fit-content;
+	border: 5px double;
+	padding: 5px;
+	padding-bottom: 10px;
+}
+.aside ul > li:nth-of-type(odd){
+	color: white;
+}
+.aside ul > li:nth-of-type(even){
+	color: black;
+}
+
+.footer {
+	width: 100%;
+	height: 30px;
+	background-color: rgb(100, 100, 100);
+}
+.footer span {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+/* skräp
+{ 
+    margin: 0;
+}
+html {
+	background-color: darkslategray;
+	height: 100%;
+}
+body {
+	width: 500px;
+	max-height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	background-color: darkgrey;
+}
+
+.body_grid {
+	display: grid;
+	max-height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	grid-template-columns: auto 250px;
+	grid-template-rows: 100px 1fr 40px;
+	grid-template-areas:
+		'header header'
+		'content aside'
+		'footer footer';
+}
+
+.header {
+	grid-area: header;
+	height: 100%;
+}
+.header header {
+	height: 100%;
+	display: grid;
+	background-color: antiquewhite;
+	grid-template-rows: 1fr 30px;
+}
+.header h1 {
+	grid-area: 1 / 1;
+}
+.header ul {
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	grid-area: 2 / 1;
+	list-style: none;
+	background-color: cadetblue;
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+nav li {
+	display: flex;
+	flex-flow: row;
+	height: 100%;
+}
+nav li a {
+	height: 100%;
+	width: 100%;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+nav li a:hover {
+	background-color: burlywood;
+}
+.content {
+	max-height: 1fr;
+	overflow-y: scroll;
+	grid-area: 2 / 1 / span 1 / span 1;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.content::-webkit-scrollbar {
+	display: none;
+}
+
+.aside {
+	white-space: nowrap;
+	grid-area: aside;
+	
+}
+
+.footer {
+	grid-area: footer;
+}*/

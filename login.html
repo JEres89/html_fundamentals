@@ -4,13 +4,43 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Login</title>
 </head>
 <body>
-	<iframe name="header" src="/login_header.html" width="600" height="200" frameBorder="0"></iframe><br>
-	<iframe name="content" src="/login_content.html" width="600" height="600" frameBorder="0"></iframe><br>
-	<footer>
-		<span>&copy; Jens Eresund</span>
-	</footer>
+	<div class="body_grid">
+		<header class="header">
+			<h1><a href="/index.html">Lunar Loggers</a></h1>
+			<nav>
+				<ul>
+					<li><a href="">About us</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/Logging">About Logging</a></li>
+					<li><a href="https://www.google.com/search?q=news">News</a></li>
+				</ul>
+				<a id="return" href="/index.html">&LessLess;- Return to front-page</a>
+			</nav>
+		</header>
+		
+		<div class="content">
+			<div class="content_header" id="login_header">
+				<h2>Employee login</h2>
+			</div>
+			<div id="login">
+				<form action="/Employees_lounge.html" method="post">
+					<fieldset>
+						<label for="username">Username:</label><br>
+						<input type="text" id="username" name="username"><br><t>
+						<label for="password">Password:</label><br>
+						<input type="password" id="password" name="password"><br>
+						<button type="submit">Log in</button>
+						<button type="reset">Reset</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			<span>&copy; Jens Eresund</span>
+		</div>
+	</div>
 </body>
 </html>
